@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ooi-Fb-M7d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFi-cb-sT2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -32,6 +32,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="FUs-Kz-Iub" kind="show" identifier="PokemonSegue" id="Q3o-pn-4r3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -39,15 +42,16 @@
                             <outlet property="delegate" destination="ooi-Fb-M7d" id="iAq-75-Omt"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="90P-jw-n7O"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gf-F7-q5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="160"/>
+            <point key="canvasLocation" x="1717.3913043478262" y="159.375"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon View Controller-->
         <scene sceneID="9PK-1H-Foo">
             <objects>
-                <viewController id="FUs-Kz-Iub" sceneMemberID="viewController">
+                <viewController id="FUs-Kz-Iub" customClass="PokemonViewController" customModule="PokeDex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8He-E1-rOY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,10 +74,33 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ur3-JX-VIN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6Dc-oS-M0P"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="O6j-Jn-Bku" id="QC7-Kk-fCO"/>
+                        <outlet property="numberLabel" destination="VVo-lB-Pwf" id="Kjk-Ti-dKT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psE-Ku-tYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.6956521739132" y="158.70535714285714"/>
+            <point key="canvasLocation" x="2718.840579710145" y="158.70535714285714"/>
+        </scene>
+        <!--Pokedex-->
+        <scene sceneID="Bdb-py-gHC">
+            <objects>
+                <navigationController title="Pokedex" automaticallyAdjustsScrollViewInsets="NO" id="eFi-cb-sT2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nHk-vD-LfX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ooi-Fb-M7d" kind="relationship" relationship="rootViewController" id="HHq-t1-5jF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9LB-Al-3cO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807.24637681159425" y="159.375"/>
         </scene>
     </scenes>
 </document>
